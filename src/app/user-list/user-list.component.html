@@ -1,0 +1,35 @@
+<p>List Of Users : </p>
+<button (click)="createUser()" type="button" class="btn btn-success">Create</button>
+
+<h3 *ngIf="users.length==0" class="text-center">User Not Found</h3>
+<table *ngIf="users.length>0" datasrc="designations" class="table table-striped">
+  <thead>
+  <tr>
+    <th scope="col">#</th>
+    <th scope="col">ID</th>
+    <th scope="col">Name</th>
+    <th scope="col">Username</th>
+    <th scope="col">Password</th>
+    <th scope="col">Designation</th>
+    <th scope="col">Edit</th>
+    <th scope="col">Delete</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr *ngFor="let user of users; index as i">
+    <th scope="row">{{ i + 1 }}</th>
+    <td>{{ user.id }}</td>
+    <td>{{ user.name }}</td>
+    <td>{{ user.username }}</td>
+    <td>{{ user.password }}</td>
+    <td>
+      <ul>
+        <li *ngFor="let designation of user.designations">{{ designation.name }}</li>
+      </ul>
+    </td>
+    <td><button (click)="editUser(user)" type="button" class="btn btn-warning">Edit</button></td>
+    <button (click)="deleteUser(user)" type="button" class="btn btn-danger">Delete</button>
+  </tr>
+  </tbody>
+</table>
+

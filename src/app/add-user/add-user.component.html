@@ -1,0 +1,17 @@
+<form #userForm="ngForm" (ngSubmit)="onSubmit(userForm)">
+  <label>Name:</label>
+  <input type="text" name="name" [(ngModel)]="user.name" required>
+
+  <label>Username:</label>
+  <input type="text" name="username" [(ngModel)]="user.username" required>
+
+  <label>Password:</label>
+  <input type="password" name="password" [(ngModel)]="user.password" required>
+
+  <label>Designations:</label>
+  <select name="designation" [(ngModel)]="user.designations" multiple>
+    <option *ngFor="let designation of designations" [value]="designation">{{designation.name}}</option>
+  </select>
+
+  <button type="submit">Submit</button>
+</form>

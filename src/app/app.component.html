@@ -1,0 +1,32 @@
+<!-- app.component.html -->
+
+<div class="container-fluid">
+  <div class="row">
+
+    <!-- Side menu -->
+    <nav class="col-md-2 d-none d-md-block bg-light sidebar">
+      <div class="sidebar-sticky">
+        <ul class="nav flex-column">
+          <li class="nav-item">
+            <a class="nav-link" routerLink="/designation">
+              <i class="bi bi-journal-text"></i> Designation
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" routerLink="/user">
+              <i class="bi bi-people"></i> User
+            </a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+
+    <!-- Main content -->
+    <main role="main" class="col-md-9 ml-sm-auto col-lg-10 pt-3 px-4">
+      <div class="container">
+        <router-outlet></router-outlet>
+      </div>
+    </main>
+
+  </div>
+</div>

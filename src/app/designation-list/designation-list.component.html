@@ -1,0 +1,25 @@
+<p>List Of Designations : </p>
+<button (click)="createDesignation()" type="button" class="btn btn-success">Create</button>
+
+<h3 *ngIf="designations.length==0" class="text-center">Designation Not Found</h3>
+<table *ngIf="designations.length>0" datasrc="designations" class="table table-striped">
+  <thead>
+  <tr>
+    <th scope="col">#</th>
+    <th scope="col">ID</th>
+    <th scope="col">Name</th>
+    <th scope="col">Edit</th>
+    <th scope="col">Delete</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr *ngFor="let designation of designations; index as i">
+    <th scope="row">{{ i + 1 }}</th>
+    <td>{{ designation.id }}</td>
+    <td>{{ designation.name }}</td>
+    <td><button (click)="editDesignation(designation)" type="button" class="btn btn-warning">Edit</button></td>
+    <button (click)="deleteDesignation(designation)" type="button" class="btn btn-danger">Delete</button>
+  </tr>
+  </tbody>
+</table>
+
