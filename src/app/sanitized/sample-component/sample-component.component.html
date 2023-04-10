@@ -1,0 +1,38 @@
+<form #sampleForm="ngForm">
+  <div class="form-group row">
+    <label for="usernametextfield" class="col-2 col-form-label">Username</label>
+    <div class="col-10">
+      <div class="input-group">
+        <div class="input-group-prepend">
+          <div class="input-group-text">
+            <i class="bi bi-person"></i>
+          </div>
+        </div>
+        <!-- first layer of validation we can put here by regex pattern -->
+        <input
+          pattern="^[A-Za-z][A-Za-z0-9_]{7,29}\w+"
+          #uname="ngModel"
+          [(ngModel)]="username"
+          id="usernametextfield"
+          name="usernametextfield"
+          placeholder="Put your username here"
+          type="text"
+          required="required"
+          class="form-control">
+        <div class="text-danger" *ngIf="uname.errors?.['pattern']">
+          User name not valid.
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="form-group row">
+    <div class="offset-2 col-10 mt-2">
+      <button
+        (click)="onSubmit(sampleForm)"
+        [disabled]="!sampleForm.valid"
+        name="submit"
+        type="submit"
+        class="btn btn-primary">Submit</button>
+    </div>
+  </div>
+</form>

@@ -15,6 +15,7 @@ import { AddDesignationComponent } from './add-designation/add-designation.compo
 import {UserShareService} from "./services/datashareservice/usershareservice";
 import { AddUserComponent } from './add-user/add-user.component';
 import { EditUserComponent } from './edit-user/edit-user.component';
+import { SampleComponentComponent } from './sanitized/sample-component/sample-component.component';
 
 
 
@@ -27,6 +28,7 @@ import { EditUserComponent } from './edit-user/edit-user.component';
     AddDesignationComponent,
     AddUserComponent,
     EditUserComponent,
+    SampleComponentComponent,
 
 
   ],

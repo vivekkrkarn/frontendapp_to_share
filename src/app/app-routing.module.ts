@@ -6,6 +6,7 @@ import {DesignationEditComponent} from "./designation-edit/designation-edit.comp
 import {AddDesignationComponent} from "./add-designation/add-designation.component";
 import {AddUserComponent} from "./add-user/add-user.component";
 import {EditUserComponent} from "./edit-user/edit-user.component";
+import {SampleComponentComponent} from "./sanitized/sample-component/sample-component.component";
 
 const routes: Routes = [
   { path: '', redirectTo: '/designation', pathMatch: 'full' },
@@ -14,7 +15,8 @@ const routes: Routes = [
   { path: 'adddesignation', component: AddDesignationComponent },
   { path: 'user', component: UserListComponent },
   { path: 'adduser', component: AddUserComponent },
-  { path: 'edituser', component: EditUserComponent }
+  { path: 'edituser', component: EditUserComponent },
+  { path: 'sanitized', component: SampleComponentComponent }
 ];
 
 @NgModule({
